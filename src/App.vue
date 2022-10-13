@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
+import Nav from "./components/Nav.vue";
 </script>
 
 <template>
-  <RouterView />
+  <div class="p-0 ">
+    <header class="w-screen">
+      <Nav></Nav>
+    </header>
+    <h1>TOM LEE</h1>
+    <h3>CREATIVE TECHNOLOGIST</h3>
+
+    <RouterView />
+  </div>
 </template>
 
 <style>
-@import '@/assets/base.css';
+@import "@/assets/base.css";
 
 #app {
   /* max-width: 1280px; */

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="text-blue-900">
         <h1>TOM LEE</h1>
         <h1>DEVELOPER</h1>
         <h1>DESIGNER</h1>
