@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <h2 class="text-3xl">About</h2>
     <p>
       I am a <strong>musician</strong> turned <strong>programmer</strong> turned
       <strong>digital media designer.</strong>

@@ -4,12 +4,11 @@ import Nav from "./components/Nav.vue";
 </script>
 
 <template>
-  <div class="p-0 ">
+  <div class="p-0 overflow-hidden">
     <header class="w-screen">
       <Nav></Nav>
     </header>
-    <h1>TOM LEE</h1>
-    <h3>CREATIVE TECHNOLOGIST</h3>
+ 
 
     <RouterView />
   </div>
