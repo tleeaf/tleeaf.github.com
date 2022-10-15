@@ -5,7 +5,7 @@ import Nav from "./components/Nav.vue";
 
 <template>
   <div class="p-0 overflow-hidden">
-    <header class="w-screen">
+    <header >
       <Nav></Nav>
     </header>
  
@@ -43,7 +43,7 @@ a,
 }
 
 @media (hover: hover) {
-  a:hover {
+  nav a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
@@ -105,8 +105,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
-    padding: 1rem 0;
     margin-top: 1rem;
   }
 }
