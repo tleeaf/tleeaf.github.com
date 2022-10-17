@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/3 mx-auto mb-32 about">
+  <div class="mx-auto mb-32 md:w-1/3 about">
     <h2 class="mb-3 text-3xl">About Me</h2>
     <img class="w-2/3" src="../assets/headshotBG.png" alt="" />
     <div class="my-5">

@@ -4,7 +4,7 @@ import Nav from "./components/Nav.vue";
 </script>
 
 <template>
-  <div class="p-0 overflow-hidden">
+  <div class="p-5 overflow-hidden md:p-10">
     <header >
       <Nav></Nav>
     </header>
@@ -20,7 +20,6 @@ import Nav from "./components/Nav.vue";
 #app {
   /* max-width: 1280px; */
   /* margin: 0 auto; */
-  padding: 2rem;
 
   font-weight: normal;
 }
@@ -52,7 +51,6 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -65,7 +63,6 @@ nav a.router-link-exact-active:hover {
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
   border-left: 1px solid var(--color-border);
 }
 
@@ -82,7 +79,6 @@ nav a:first-of-type {
   #app {
     /* display: grid; */
     /* grid-template-columns: 1fr 1fr; */
-    padding: 0 2rem;
   }
 
   header {
@@ -103,9 +99,7 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
-    margin-top: 1rem;
   }
 }
 </style>

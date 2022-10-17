@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/3 mx-auto">
+  <div class="mx-auto md:w-1/3">
     <h2 class="text-3xl">Work</h2>
     <ul class="">
       <li
@@ -40,7 +40,7 @@ export default defineComponent({
           description:
             "Charles VR is a reconstruction of the coronation mass for Charles V, the last Holy Roman Emperor to be crowned by a pope. The aim of this project is to immerse users within the scenery of the mass and explore scholarly annotations describing both the built environment and the political background of the event. I constructed the experience within Unity and did most of the environmental modeling, texturing and lighting.",
           href: "",
-          embed: `<video class="wp-video-shortcode" id="video-5544-1" width="750" height="422" preload="metadata" controls="controls"><source type="video/mp4" src="https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4?_=1"><a href="https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4">https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4</a></video>`,
+          embed: `<video class="wp-video-shortcode" id="video-5544-1" width="100%" height="422" preload="metadata" controls="controls"><source type="video/mp4" src="https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4?_=1"><a href="https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4">https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4</a></video>`,
         },
         {
           name: "Land Grab CT",
@@ -59,7 +59,7 @@ export default defineComponent({
           animation.`,
           href: "www.by-our-love.com",
           embed: ` <iframe
-          width="560"
+          width="100%"
           height="315"
           src="https://www.youtube.com/embed/MM_9KT78VqM"
           title="YouTube video player"
@@ -72,7 +72,7 @@ export default defineComponent({
           name: "Diagram of Winds",
           date: "2019",
           description: `I was hired by a PhD candidate in English to construct his vision for a unique poetry reading experience. His design required a unique layout and randomization of poems. The winds interface is a circle of words representing a randomized set of poems. I implemented a custom frontend for a wordpress site using HTML/CSS and jQuery and devised a tagging system within wordpress that would allow for words or phrases within each poem to have hover-over definitions and explanations. There is also a light and dark mode toggle for the site.`,
-          embed: `<iframe src="https://player.vimeo.com/video/760347834?h=a5e08bafc5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="560" height="315" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Diagram of Winds Demo"></iframe>`,
+          embed: `<iframe src="https://player.vimeo.com/video/760347834?h=a5e08bafc5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="100%" height="315" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Diagram of Winds Demo"></iframe>`,
         },
         {
           name: "Léamh",
@@ -95,7 +95,7 @@ export default defineComponent({
           allow="autoplay; fullscreen; picture-in-picture"
           allowfullscreen
           frameborder="0"
-          style=" width: 560px; height: 315px"
+          style=" width: 100%; height: 315px"
         ></iframe>
     `,
         },
@@ -110,7 +110,7 @@ export default defineComponent({
           was my original design that allowed players to trigger musical sounds
           from several different instrument types.`,
           embed: `  <iframe
-        width="560"
+        width="100%"
         height="315"
         src="https://www.youtube.com/embed/iJ3bpEtzg44"
         title="YouTube video player"
