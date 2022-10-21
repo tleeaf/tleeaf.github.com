@@ -15,6 +15,7 @@
           {{ project.description }}
         </p>
         <span v-if="project.embed" v-html="project.embed"></span>
+        <img v-if="project.img" :src="project.img" alt="">
       </li>
     </ul>
   </div>
@@ -36,7 +37,7 @@ export default defineComponent({
         },
         {
           name: "Charles VR",
-          date: "2016-",
+          date: "2017-",
           description:
             "Charles VR is a reconstruction of the coronation mass for Charles V, the last Holy Roman Emperor to be crowned by a pope. The aim of this project is to immerse users within the scenery of the mass and explore scholarly annotations describing both the built environment and the political background of the event. I constructed the experience within Unity and did most of the environmental modeling, texturing and lighting.",
           href: "",
@@ -79,6 +80,7 @@ export default defineComponent({
           date: "2018",
           description: `Working with a team of researchers in the field, I built an app for studying Early Modern Irish built using Vue and Firebase. We created valuable learning resources for the scholarly community including a primer on paleography and a verb conjugation generator. I designed a quiz framework that allows new types of quiz questions to be added easily.`,
           href: "https://leamhquiz.web.app/#/",
+          img: 'https://léamh.org/wp-content/uploads/2022/03/Screen-Shot-2022-03-11-at-11.21.34-AM-2.png'
         },
         {
           name: "Motion-sensing Media Display",

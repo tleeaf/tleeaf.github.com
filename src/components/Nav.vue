@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="top-0 left-0 hover:text-teal-500">
+    <a href="/" class="top-0 left-0 hover:text-teal-500">
       <h1>TOM LEE</h1>
       <h3>CREATIVE TECHNOLOGIST</h3>
-    </div>
+    </a>
     <socials></socials>
     <nav class="gap-5 text-xl font-bold">
       <a class="" href="/#/about">About</a>
