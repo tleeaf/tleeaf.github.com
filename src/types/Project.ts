@@ -5,4 +5,5 @@ export interface Project{
     description: string,
     img: string,
     date: string,
+    categories: string[],
 }

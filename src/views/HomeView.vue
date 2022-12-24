@@ -2,10 +2,13 @@
   <main>
     <!-- <iframe height="1080" width="1080" src="https://editor.p5js.org/tleeaf/full/QcomVL4Dg"></iframe> -->
     <div class="mx-auto my-5">
-      <div class="grid place-items-center"><button class="p-5 my-4 border-4 border-slate-800 w-100 hover:bg-pink-200" @click="LoadRandomSketch">Random Sketch</button></div>
+      <div class="grid place-items-center"><button class="p-5 my-4 border-2 border-slate-800 w-100 btn" @click="LoadRandomSketch">Random Sketch</button></div>
       <RandomGradient v-if="activeIndex == 0"></RandomGradient>
       <SpinningShapes v-if="activeIndex == 1"></SpinningShapes>
       <PhotoPuzzle v-if="activeIndex == 2"></PhotoPuzzle>
+      <Cipher v-if="activeIndex == 3"></Cipher>
+      <MoneyLine v-if="activeIndex == 4"></MoneyLine>
+      <!-- <Morse></Morse> -->
       <!-- <div class="grid grid-cols-3 grid-rows-4 gap-16 m-36">
             <div class="flex items-center justify-center flex-auto w-24 h-24 text-center border-2 border-black rounded-full animate-bounce hover:border-cyan-100">T</div>
             <div class="flex items-center justify-center flex-auto w-24 h-24 text-center border-2 border-black rounded-full animate-bounce hover:border-cyan-100">O</div>
@@ -26,8 +29,12 @@
 import RandomGradient from '@/components/RandomGradient.vue';
 import SpinningShapes from '../components/SpinningShapes.vue';
 import PhotoPuzzle from '../components/PhotoPuzzle.vue';
-export default {
-  components: { RandomGradient, SpinningShapes, PhotoPuzzle },
+import { defineComponent } from '@vue/runtime-core';
+import Cipher from '../components/Cipher.vue';
+import MoneyLine from '../components/MoneyLine.vue';
+import Morse from '../components/Morse.vue';
+export default defineComponent({
+  components: { RandomGradient, SpinningShapes, PhotoPuzzle, Cipher, MoneyLine, Morse },
   data() {
     return {
       colors: [
@@ -185,20 +192,21 @@ export default {
   },
   methods: {
     LoadRandomSketch() {
-      this.activeIndex = Math.floor(Math.random()*3);
+      this.activeIndex = (this.activeIndex + 1)%5
     }
   },
   computed: {
-    colorInfo() {
-      return this.$refs.color_Cyan
-    }
+
   },
-};
+});
 </script>
 
 
 <style>
 main{
   width: calc(100vw - 100px)
+}
+.btn:hover{
+  background: linear-gradient(red,yellow,blue,magenta, );
 }
 </style>

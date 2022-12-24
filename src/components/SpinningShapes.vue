@@ -27,7 +27,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import  { defineComponent } from "@vue/runtime-core";
+
+export default defineComponent({
   name: "SpinningShapes",
   data() {
     return {
@@ -46,7 +48,7 @@ export default {
       return 255 - this.minChannelVal;
     },
   },
-};
+});
 </script>
 
 <style lang="scss" scoped>

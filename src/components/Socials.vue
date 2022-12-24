@@ -1,7 +1,7 @@
 <template>
   <span>
     <span class="flex gap-1"
-      ><a href="github.com/tleeaf"
+      ><a href="https://github.com/tleeaf"
         ><div
           class="w-10 h-10 github hover:bg-teal-400 hover:scale-125"
         ></div
