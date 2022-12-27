@@ -8,6 +8,8 @@
       <PhotoPuzzle v-if="activeIndex == 2"></PhotoPuzzle>
       <Cipher v-if="activeIndex == 3"></Cipher>
       <MoneyLine v-if="activeIndex == 4"></MoneyLine>
+      <Synthwave v-if="activeIndex == 5"></Synthwave>
+      <MoleGrid v-if="activeIndex == 6"></MoleGrid>
       <!-- <Morse></Morse> -->
       <!-- <div class="grid grid-cols-3 grid-rows-4 gap-16 m-36">
             <div class="flex items-center justify-center flex-auto w-24 h-24 text-center border-2 border-black rounded-full animate-bounce hover:border-cyan-100">T</div>
@@ -33,8 +35,11 @@ import { defineComponent } from '@vue/runtime-core';
 import Cipher from '../components/Cipher.vue';
 import MoneyLine from '../components/MoneyLine.vue';
 import Morse from '../components/Morse.vue';
+import Synthwave from '../components/Synthwave.vue';
+import MoleGrid from '../components/MoleGrid.vue';
+
 export default defineComponent({
-  components: { RandomGradient, SpinningShapes, PhotoPuzzle, Cipher, MoneyLine, Morse },
+  components: { RandomGradient, SpinningShapes, PhotoPuzzle, Cipher, MoneyLine, Morse, Synthwave, MoleGrid },
   data() {
     return {
       colors: [
@@ -192,7 +197,7 @@ export default defineComponent({
   },
   methods: {
     LoadRandomSketch() {
-      this.activeIndex = (this.activeIndex + 1)%5
+      this.activeIndex = (this.activeIndex + 1)%7
     }
   },
   computed: {

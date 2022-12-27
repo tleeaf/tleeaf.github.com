@@ -2,7 +2,7 @@
   <div class="grid place-items-center">
     <div class="grid mx-auto my-5 place-items-center">
       <h2 class="my-5 text-xl font-bold">Photo Puzzle using object-position</h2>
-      <div class="flex my-5">
+      <div class="flex my-5" v-if="!playing">
         <label for="subdivision" class="inline">Puzzle Resolution</label
         ><input
           name="subdivision"
@@ -10,15 +10,18 @@
           type="number"
           class="inline ml-4 border-2 border-grey-50"
         />
-      </div>
-      <button
-        v-if="!jumbledTiles"
-        class="p-2 border-2 border-black"
+        <button
+        class="p-2 border-2 border-black hover:border-teal-300 "
         @click="jumbleTiles"
       >
-        Jumble Tiles
+        Start Puzzle
       </button>
-      <h3 v-show="winStatus">Puzzle Complete!! Nice Job!!</h3>
+      </div>
+     
+
+      <div v-show="winStatus"><h3>Puzzle Complete!! Nice Job!!</h3>
+      <button @click="reset" title="another one!" class="block mx-auto border-2 rounded hover:border-teal-300 border-black-100"><img class="h-16" src="../assets/dj-khaled.png"/></button>
+      </div>
     </div>
     <div>
       <div class="flex" v-for="j in gridSize" :key="j">
@@ -26,9 +29,9 @@
           <span v-for="i in gridSize" :key="i" draggable="true" class="dragtile"
             ><img
               @click="moveTile(i - 1 + (j - 1) * gridSize)"
-              src="https://picsum.photos/800/800"
+              :src="'https://picsum.photos/800/800?random&dummyParam=' + dummyParam"
               class="m-0 img"
-              :style="`${
+              :style="`${!playing ? 'border: 1px #CCC solid ' : ''} ${
                 i - 1 + (j - 1) * gridSize == active
                   ? 'border: 3px hotpink solid'
                   : ''
@@ -69,10 +72,11 @@ export default defineComponent({
   data() {
     return {
       gridSize: 3 as number,
-      jumbledTiles: false as boolean,
+      playing: false as boolean,
       active: -1 as number,
       tilePositions: Array.from(Array(3 ** 2).keys()) as number[],
       winStatus: false as boolean,
+      dummyParam: 1 as number,
     };
   },
   methods: {
@@ -82,8 +86,7 @@ export default defineComponent({
           this.active = index;
           return;
         }
-      }
-      else{
+      } else {
         this.active = -1;
         return;
       }
@@ -91,18 +94,28 @@ export default defineComponent({
       this.tilePositions[index] = this.tilePositions[this.active];
       this.tilePositions[this.active] = temp;
       this.active = -1;
-      for(var i = 0; i < this.tilePositions.length - 1; i++){
-        if(this.tilePositions[i] > this.tilePositions[i+1])
-          return;
-      }
-      this.winStatus = true;
+      this.winStatus = this.puzzleInOrder;
     },
     jumbleTiles() {
       let arr = Array.from(Array(this.gridSize ** 2).keys());
       this.tilePositions = shuffleArray(shuffleArray(arr));
+      this.playing = true;
     },
+    reset(){
+      this.winStatus = false;
+      this.playing = false;
+      this.dummyParam = Math.floor(Math.random()*10);
+      this.$forceUpdate();
+    }
   },
-  computed: {},
+  computed: {
+    puzzleInOrder(){
+      for (var i = 0; i < this.tilePositions.length - 1; i++) {
+        if (this.tilePositions[i] > this.tilePositions[i + 1]) return false;
+      }
+      return true;
+    }
+  },
   watch: {
     gridSize(value) {
       this.tilePositions = Array.from(Array(value ** 2).keys()) as number[];
@@ -126,12 +139,23 @@ export default defineComponent({
   object-fit: none;
   cursor: move;
 }
-h3{
+h3 {
   margin-top: 0px;
   margin-bottom: 10px;
   font-family: sans-serif;
   font-size: 6rem;
-  background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+  background: linear-gradient(
+    to right,
+    #ef5350,
+    #f48fb1,
+    #7e57c2,
+    #2196f3,
+    #26c6da,
+    #43a047,
+    #eeff41,
+    #f9a825,
+    #ff5722
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

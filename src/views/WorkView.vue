@@ -45,8 +45,8 @@ export default defineComponent({
   name: "WorkView",
   data() {
     return {
-      selectedCategories: [],
-      categories: ["Web", "Animation", "Game", "VR"],
+      selectedCategories: [] as string [],
+      categories: ["Web", "Animation", "Game", "VR"] as string [],
       projects: [
         {
           name: "Nextgen Scholarship Portal",

@@ -36,7 +36,7 @@ export default defineComponent({
         }
     },
     mounted () {
-      this.$refs.container.focus();
+      (this.$refs.container as any).focus();
     },
   methods: {
     onHover(){
