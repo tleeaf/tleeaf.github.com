@@ -4,7 +4,7 @@
     <div v-if="start">
       <h2>Score: {{ score }}</h2>
       <h2>Time Left: {{ time }}</h2>
-      <div v-if="time > 0" class="container"><div v-for="row in gridSize" :key="row">
+      <div v-if="time > 0" class="container" @click="playHammerSFX"><div v-for="row in gridSize" :key="row">
         <span class="flex flex-row">
           <WhackAMole
             @mole-whack="handleWhack"
@@ -26,6 +26,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import WhackAMole from "./WhackAMole.vue";
+import buzzSFX from '../assets/21871__nofeedbak__sarahbuzzer.mp3';
+import hammerSFX from '../assets/653366__triqystudio__hammerhit.wav';
 export default defineComponent({
   setup() {
     return {};
@@ -37,9 +39,9 @@ export default defineComponent({
     return {
       gridSize: 5 as number,
       score: 0 as number,
-      time: 120,
+      time: 70,
       start: false,
-      buzzer: new Audio(require('../assets/21871__nofeedbak__sarahbuzzer.mp3'))
+
     };
   },
   methods: {
@@ -48,12 +50,24 @@ export default defineComponent({
     },
     startGame(){
         this.start = true;
-        this.buzzer.play();
+        const buzz = new Audio(buzzSFX);
+        buzz.play();
+    },
+    playHammerSFX(){
+        const hammer = new Audio(hammerSFX);
+        hammer.play();
     }
   },
   mounted() {
-    setInterval(() => {
+    const interval = setInterval(() => {
+      if(this.time > 0)  
       this.time--;
+      else
+      {
+        const buzz = new Audio(buzzSFX);
+        buzz.play();
+        clearInterval(interval);
+      }
     }, 1000);
   },
 });
