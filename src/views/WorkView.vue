@@ -28,11 +28,11 @@
           ><h2 class="text-2xl">{{ project.name }} ({{ project.date }})</h2></a
         >
         <h2 v-else class="text-2xl">{{ project.name }} ({{ project.date }})</h2>
-        <p class="my-4">
-          {{ project.description }}
-        </p>
+        <div class="my-4 project-description" v-html="project.description">
+
+        </div>
         <span v-if="project.embed" v-html="project.embed"></span>
-        <img v-if="project.img" :src="project.img" alt="" />
+        <img v-if="project.img" :src="project.img" alt="" class="w-11/12 h-full"/>
       </li>
     </ul>
   </div>
@@ -49,11 +49,26 @@ export default defineComponent({
       categories: ["Web", "Animation", "Game", "VR"] as string [],
       projects: [
         {
+          name: "Jeopardy Practice App",
+          date: "2024",
+          description: "I adapted the work of <a href='https://glitch.com/@trentmwillis'>@trentmwillis</a> and <a href='https://glitch.com/@PatrickWeaver'>@patrickweave_r</a> who built a backend and frontend of a Jeopardy! game that used real archived Jeopardy! clues scraped from the J-archive site. To expand on this work I added a score tracker, a synthesized clue-reader and voice input.",
+          categories: ["Web"],
+          href: "https://jeopardy-archive-practice-app.glitch.me",
+          img: "/src/assets/JeopardyApp.png",
+        },
+        {
           name: "Nextgen Scholarship Portal",
           date: "2021-",
           description:
             "I created a scholarship application and evaluation portal for a regional statistics society. The committee required a FERPA compliant site that would allow for the secure handling of student transcript information. The solution was comprised of a MERN-stack app built on AWS infrastructure.",
+            img: "/src/assets/NextgenStats.png",
           href: "",
+          categories: ["Web"],
+        },
+        {
+          name: "Fudeko",
+          date: "2024-",
+          description: "Fudeko is a digital journaling and oral history platform originally designed for use within the community that experienced internment camps during WWII. The frontend is built with Vue and the backend is built with Supabase.",
           categories: ["Web"],
         },
         {
@@ -200,4 +215,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+a{
+  color: #2b6cb0;
+}
+a:hover{
+  color: #2c5282;
+}
+.project-description{
+  a{
+    color: #2b6cb0;
+  }
+}
 </style>
