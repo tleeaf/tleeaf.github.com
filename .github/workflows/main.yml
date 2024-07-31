@@ -1,0 +1,45 @@
+name: portfolio-deploy
+
+on: 
+  push: 
+    branches: 
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Vue
+    steps:
+      - name: Checkout Repo
+      - uses: actions/checkout@v4
+      - id: Build-Deploy-Vue
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name: Install and Build 
+        run: |
+          npm ci
+          npm run build
+  deploy:
+    name: Deploy App
+    needs: build
+    permissions:
+      id-token: write
+    environment:
+      name: tleeaf.github.io
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to tleeaf.github.io
+        id: deployment
+        run: |
+          cd dist
+          git init
+          git config.user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Deploy from repository"
+          git push --force git@github.com:tleeaf/tleeaf.github.io.git main
+        
+      
