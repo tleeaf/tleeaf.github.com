@@ -60,7 +60,7 @@ export default defineComponent({
           name: "Nextgen Scholarship Portal",
           date: "2021-",
           description:
-            "I created a scholarship application and evaluation portal for a regional statistics society. The committee required a FERPA compliant site that would allow for the secure handling of student transcript information. The solution was comprised of a MERN-stack app built on AWS infrastructure.",
+            "I created a scholarship application and evaluation portal for a regional statistics society. The committee required a FERPA compliant site that would allow for the secure handling of student transcript information. The solution was comprised of a MERN-stack app built on AWS infrastructure including S3 for storing transcript files, EC2 for hosting the backend, Amplify for frontend hosting. I used the MongoDB Atlas reporting tools to build a dashboard out of the most important application statistics that the rest of the team would frequently ask for.", 
             img: "/src/assets/NextgenStats.png",
           href: "",
           categories: ["Web"],
@@ -84,7 +84,7 @@ export default defineComponent({
           name: "Land Grab CT",
           date: "2020",
           description:
-            "In collaboration with a team at Greenhouse Studios, I developed an engaging site exploring Connecticut's history of land grant institutions. I used Vue, Fullpage.js and Sanity.io to allow content writers to edit and revise the site content.",
+            "In collaboration with a team at Greenhouse Studios, I developed an engaging site exploring Connecticut's history of land grant institutions. I used Vue, Fullpage.js to create it's unique layout and navigation style. I also used Sanity.io to allow content writers to edit and revise the site content.",
           href: "www.landgrabct.org",
           categories: ["Web"],
         },
