@@ -24,16 +24,7 @@ jobs:
         run: |
           npm ci
           npm run build
-  deploy:
-    name: Deploy App
-    needs: build
-    permissions:
-      id-token: write
-    environment:
-      name: tleeaf.github.io
 
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to tleeaf.github.io
         id: deployment
         run: |
