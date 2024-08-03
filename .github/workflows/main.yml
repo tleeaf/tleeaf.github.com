@@ -34,7 +34,7 @@ jobs:
 
       - name: Deploy to tleeaf.github.io
         env:
-          SUPER_SECRET: ${{ secrets.MY_PAT }}
+          SUPER_SECRET: ${{ env.secrets.MY_PAT }}
         id: deployment
         run: |
           cd dist
