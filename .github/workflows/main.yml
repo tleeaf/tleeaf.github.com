@@ -39,8 +39,8 @@ jobs:
         run: |
           cd dist
           git init
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "tleeaf"
+          git config user.email "thomas.lee@uconn.edu"
           git add .
           git commit -m "Deploy from repository"
           git push --force "https://x-access-token:${{ secrets.MY_PAT }}@github.com/tleeaf/tleeaf.github.io" master
