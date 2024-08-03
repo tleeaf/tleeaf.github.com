@@ -19,7 +19,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
-          repository: 'tleeaf.github.com'
+          repository: 'tleeaf/tleeaf.github.com'
           ref: 'master'
           token: ${{secrets.MY_PAT}}
 
