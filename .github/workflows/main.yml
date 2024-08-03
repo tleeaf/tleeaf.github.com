@@ -1,4 +1,4 @@
-name: portfolio-deploy
+:name: portfolio-deploy
 
 on: 
   push: 
@@ -17,11 +17,13 @@ jobs:
       
     steps:
       - name: Checkout Repo
+        env: 
+          TOKEN: $${{secrets.MY_PAT}}
         uses: actions/checkout@v4
         with:
           repository: 'tleeaf/tleeaf.github.com'
           ref: 'master'
-          token: ${{secrets.MY_PAT}}
+          token: $TOKEN
 
       - name: Setup Node
         uses: actions/setup-node@v4
