@@ -46,4 +46,4 @@ jobs:
           git commit -m "Deploy from repository"
           git remote add origin https://github.com/tleeaf/tleeaf.github.io.git
           git remote set-url --push origin  https://x-access-token:$GITHUB_TOKEN@github.com/tleeaf/tleeaf.github.io.git
-          git push origin master
+          git push -f origin master
