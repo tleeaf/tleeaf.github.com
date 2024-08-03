@@ -19,8 +19,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
+          repository: 'tleeaf.github.com'
           ref: 'master'
-          
+          token: ${{secrets.MY_PAT}}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -32,17 +33,32 @@ jobs:
           npm ci
           npm run build
 
-      - name: Deploy to tleeaf.github.io
-        env:
-          SUPER_SECRET: ${{ secrets.MY_PAT }}
-        id: deployment
-        run: |
-          cd dist
-          git init
-          git config user.name "tleeaf"
-          git config user.email "thomas.lee@uconn.edu"
-          git add .
-          git commit -m "Deploy from repository"
-          git push --force git@github.com:tleeaf/tleeaf.github.io.git master
+      # - name: Deploy to tleeaf.github.io
+      #   env:
+      #     SUPER_SECRET: ${{ secrets.MY_PAT }}
+      #   id: deployment
+      #   run: |
+      #     cd dist
+      #     git init
+      #     git config user.name "Github Actions"
+      #     git config user.email "<>"
+      #     git add .
+      #     git commit -m "Deploy from repository"
+      #     git push --force git@github.com:tleeaf/tleeaf.github.io.git master
         
-      
+      - name: Git Push Action
+        # You may pin to the exact commit or the version.
+        # uses: x-actions/git-push@ba04e59cd92b579c1df53fa8d398bec56f310906
+        uses: x-actions/git-push@v1.0
+        with:
+          # git user email
+          GITHUB_EMAIL: 'thomas.lee@uconn.edu'
+          # git use username
+          GITHUB_USERNAME: 'tleeaf'
+          # https:/<token>@github.com/owner/repo.git
+          PUBLISH_REPO: 'https:/${{secrets.GITHUB_TOKEN}}@github.com/tleeaf/tleeaf.github.io.git'
+          # git branch
+          PUBLISH_BRANCH: master
+          # dir to publish
+          # PUBLISH_DIR: # optional
+          
