@@ -17,10 +17,8 @@
       <p>
         I have created <strong>games</strong>, <strong>websites</strong>,
         <strong>applications</strong>,
-        <strong
-          >and a variety of interactive experiences, including work in
-          AR/VR.</strong
-        >
+        <strong>and a variety of interactive experiences, including work in
+          AR/VR.</strong>
       </p>
       <p>
         I also have a passion for teaching and mentoring and have designed and
@@ -30,17 +28,12 @@
         Some things I really like to nerd out on include trivia, comedy, jazz,
         cooking and gaming.
       </p>
-      
+
     </div>
 
-    <span
-      ><a
-        class="text-lg font-bold underline hover:text-teal-400"
-        href="https://docs.google.com/document/d/1-VywZtdpg6Mhq-9boRGtbkJxpgJU9WVy0TfEB4zqPFs/edit?usp=sharing"
-        >Resume</a
-      >
-      📃</span
-    >
+    <a class="text-lg font-bold underline hover:text-teal-400" href="./assets/TLResume082024.pdf"
+      download="TomLeeResume"><span>Download my Résumé 📃</span></a>
+
   </div>
 </template>
 
@@ -56,9 +49,9 @@ export default {
     display: flex;
     flex-direction: column;
   }
+
   p {
     margin-top: 1em;
   }
 }
-
 </style>
