@@ -32,7 +32,7 @@
     </div>
 
     <a class="text-lg font-bold underline hover:text-teal-400" href="./assets/TLResume082024.pdf"
-      download="TomLeeResume"><span>Download my Résumé 📃</span></a>
+      download="TomLeeResume.pdf"><span>Download my Résumé 📃</span></a>
 
   </div>
 </template>
