@@ -31,7 +31,7 @@
 
     </div>
 
-    <a class="text-lg font-bold underline hover:text-teal-400" href="./assets/TLResume082024.pdf"
+    <a class="text-lg font-black underline hover:text-teal-400" href="./assets/TLResume082024.pdf"
       download="TomLeeResume.pdf"><span>Download my Résumé 📃</span></a>
 
   </div>

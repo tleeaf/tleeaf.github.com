@@ -4,49 +4,41 @@
     <div class="mt-5">
       <span class="font-bold">Filter: </span>
       <div>
-        <button
-          class="p-1 m-1 border-2 rounded hover:border-teal-300"
-          :class="
-            selectedCategories.includes(cat)
-              ? 'border-teal-300'
-              : 'border-gray-200'
-          "
-          @click="handleCategoryButtonClick(cat)"
-          v-for="cat in categories"
-          :key="cat"
-        >
+        <button class="p-1 m-1 border-2 rounded hover:border-teal-300" :class="selectedCategories.includes(cat)
+            ? 'border-teal-300'
+            : 'border-gray-200'
+          " @click="handleCategoryButtonClick(cat)" v-for="cat in categories" :key="cat">
           {{ cat }}
         </button>
       </div>
     </div>
     <ul class="">
-      <li class="my-24" v-for="project in filteredProjects" :key="project.name">
-        <a
-          v-if="project.href"
-          :href="project.href"
-          class="font-bold underline hover:text-teal-400"
-          ><h2 class="text-2xl">{{ project.name }} ({{ project.date }})</h2></a
-        >
+      <li class="p-8 my-24 border-2 border-teal-300 rounded-lg shadow-md" v-for="project in filteredProjects" :key="project.name">
+        <a v-if="project.href" :href="project.href" class="font-bold underline hover:text-teal-400">
+          <h2 class="text-2xl">{{ project.name }} ({{ project.date }})</h2>
+        </a>
         <h2 v-else class="text-2xl">{{ project.name }} ({{ project.date }})</h2>
         <div class="my-4 project-description" v-html="project.description">
 
         </div>
         <span v-if="project.embed" v-html="project.embed"></span>
-        <img v-if="project.img" :src="project.img" alt="" class="w-11/12 h-full"/>
+        <img v-if="project.img" :src="project.img" alt="" class="w-11/12 h-full" />
       </li>
     </ul>
   </div>
 </template>
 
-<script  lang="ts">
+<script lang="ts">
 import { defineComponent } from "vue";
+import JeopardyImage from "../assets/work-imgs/JeopardyApp.png"; 
+import NextgenStatsImage from "../assets/work-imgs/NextgenStats.png";
 // import {Project} from '@/types/Project';
 export default defineComponent({
   name: "WorkView",
   data() {
     return {
-      selectedCategories: [] as string [],
-      categories: ["Web", "Animation", "Game", "VR"] as string [],
+      selectedCategories: [] as string[],
+      categories: ["Web", "Animation", "Game", "VR"] as string[],
       projects: [
         {
           name: "Jeopardy Practice App",
@@ -54,14 +46,14 @@ export default defineComponent({
           description: "I adapted the work of <a href='https://glitch.com/@trentmwillis'>@trentmwillis</a> and <a href='https://glitch.com/@PatrickWeaver'>@patrickweave_r</a> who built a backend and frontend of a Jeopardy! game that used real archived Jeopardy! clues scraped from the J-archive site. To expand on this work I added a score tracker, a synthesized clue-reader and voice input.",
           categories: ["Web"],
           href: "https://jeopardy-archive-practice-app.glitch.me",
-          img: "/src/assets/JeopardyApp.png",
+          img: JeopardyImage,
         },
         {
           name: "Nextgen Scholarship Portal",
           date: "2021-",
           description:
-            "I created a scholarship application and evaluation portal for a regional statistics society. The committee required a FERPA compliant site that would allow for the secure handling of student transcript information. The solution was comprised of a MERN-stack app built on AWS infrastructure including S3 for storing transcript files, EC2 for hosting the backend, Amplify for frontend hosting. I used the MongoDB Atlas reporting tools to build a dashboard out of the most important application statistics that the rest of the team would frequently ask for.", 
-            img: "/src/assets/NextgenStats.png",
+            "I created a scholarship application and evaluation portal for a regional statistics society. The committee required a FERPA compliant site that would allow for the secure handling of student transcript information. The solution was comprised of a MERN-stack app built on AWS infrastructure including S3 for storing transcript files, EC2 for hosting the backend, Amplify for frontend hosting. I used the MongoDB Atlas reporting tools to build a dashboard out of the most important application statistics that the rest of the team would frequently ask for.",
+          img: NextgenStatsImage,
           href: "",
           categories: ["Web"],
         },
@@ -131,7 +123,7 @@ export default defineComponent({
         interactive installation for Diversified Media Group. We imagined this
         setup could be used in waiting areas and especially considered the needs
         of children and the elderly. I helped design and implement several
-        scenes showcasing a motion-sensing interactive display.`,
+        scenes showcasing a motion-sensing interactive display. I also implemented gesture-based controls for the river adventure game, which were made using the Microsoft Kinect Visual Gesture Builder software.`,
           embed: ` 
         <iframe
           src="https://player.vimeo.com/video/760002105?h=c9f62460a9&badge=0&autopause=0&player_id=0&app_id=58479/embed"
@@ -215,14 +207,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-a{
+a {
   color: #2b6cb0;
 }
-a:hover{
+
+a:hover {
   color: #2c5282;
 }
-.project-description{
-  a{
+
+.project-description {
+  a {
     color: #2b6cb0;
   }
 }
