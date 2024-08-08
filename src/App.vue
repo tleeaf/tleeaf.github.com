@@ -21,6 +21,7 @@ import Nav from "./components/Nav.vue";
   /* max-width: 1280px; */
   /* margin: 0 auto; */
 
+  font-family: 'Inter', sans-serif;
   font-weight: normal;
 }
 

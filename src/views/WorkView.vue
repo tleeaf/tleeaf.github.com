@@ -32,6 +32,7 @@
 import { defineComponent } from "vue";
 import JeopardyImage from "../assets/work-imgs/JeopardyApp.png"; 
 import NextgenStatsImage from "../assets/work-imgs/NextgenStats.png";
+import HartfordBoundImage from "../assets/work-imgs/HartfordBound.png";
 // import {Project} from '@/types/Project';
 export default defineComponent({
   name: "WorkView",
@@ -40,6 +41,14 @@ export default defineComponent({
       selectedCategories: [] as string[],
       categories: ["Web", "Animation", "Game", "VR"] as string[],
       projects: [
+        {
+          name: "Hartford Bound",
+          date: "2019",
+          description: "Hartford Bound tells the history of 80 years of migration to and within the city of Hartford, focusing on Africian-American, Puerto Rican and West Indian populations. The project is a collaboration between Greenhouse Studios and Dr. Fiona Vernal. It features map designs by James Kolb. This site was built using Vue and Fullpage.js.",
+          href: "https://hartfordbound.com",
+          categories: ["Web"],
+          img: HartfordBoundImage,
+        },
         {
           name: "Jeopardy Practice App",
           date: "2024",
