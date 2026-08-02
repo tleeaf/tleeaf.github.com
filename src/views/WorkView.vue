@@ -77,7 +77,7 @@ export default defineComponent({
           date: "2026–",
           description:
             "As a Software Engineer at Destination Pet I work across multiple frontend projects that serve to connect pet parents with local pet care providers. I contributed to the launch of the Yourgi Pro platform, and continued enhancement and maintenance of both apps. I initiated the documentation of both project's component libraries using Storybook and creating comprehensive test coverage.",
-          href: "",
+          href: "https://www.yourgi.com/",
           categories: ["Web"],
         },
         {
