@@ -59,7 +59,7 @@ export default defineComponent({
         },
         {
           name: "Nextgen Scholarship Portal",
-          date: "2021-",
+          date: "2021–",
           description:
             "I created a scholarship application and evaluation portal for a regional statistics society. The committee required a FERPA compliant site that would allow for the secure handling of student transcript information. The solution was comprised of a MERN-stack app built on AWS infrastructure including S3 for storing transcript files, EC2 for hosting the backend, Amplify for frontend hosting. I used the MongoDB Atlas reporting tools to build a dashboard out of the most important application statistics that the rest of the team would frequently ask for.",
           img: NextgenStatsImage,
@@ -68,18 +68,17 @@ export default defineComponent({
         },
         {
           name: "Fudeko",
-          date: "2024-",
+          date: "2024–2026",
           description: "Fudeko is a digital journaling and oral history platform originally designed for use within the community that experienced internment camps during WWII. The frontend is built with Vue and the backend is built with Supabase.",
           categories: ["Web"],
         },
         {
-          name: "Charles VR",
-          date: "2017-",
+          name: "Yourgi/Yourgi Pro",
+          date: "2026–",
           description:
-            "Charles VR is a reconstruction of the coronation mass for Charles V, the last Holy Roman Emperor to be crowned by a pope. The aim of this project is to immerse users within the scenery of the mass and explore scholarly annotations describing both the built environment and the political background of the event. I constructed the experience within Unity and did most of the environmental modeling, texturing and lighting.",
+            "As a Software Engineer at Destination Pet I work across multiple frontend projects that serve to connect pet parents with local pet care providers. I contributed to the launch of the Yourgi Pro platform, and continued enhancement and maintenance of both apps. I initiated the documentation of both project's component libraries using Storybook and creating comprehensive test coverage.",
           href: "",
-          embed: `<video class="wp-video-shortcode" id="video-5544-1" width="100%" height="422" preload="metadata" controls="controls"><source type="video/mp4" src="https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4?_=1"><a href="https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4">https://dev-greenhouse-studios.pantheonsite.io/wp-content/uploads/2020/09/CVR-WithFade.mp4</a></video>`,
-          categories: ["VR"],
+          categories: ["Web"],
         },
         {
           name: "Land Grab CT",
@@ -146,7 +145,7 @@ export default defineComponent({
         },
         {
           name: "Boston Children's Hospital Interactive Wall Display",
-          date: "2013-16",
+          date: "2013–16",
           description: ` I worked with UConn's Digital Media and Design Department to design
           and implement several scenes for the Boston Children's Hospital
           Interactive Wall, which is a main feature of their lobby area. My main
